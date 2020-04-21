@@ -1,5 +1,5 @@
 # coding=utf-8
-
+# marshmallow to handle serialization and deserialization of JSON object
 from marshmallow import Schema, fields
 from sqlalchemy import Column, String
 
@@ -17,6 +17,7 @@ class Exam(Entity, Base):
         self.title = title
         self.description = description
 
+# Using the Schema class of marshmallow to define a new class called ExamSchema. Use this class to transform instances of Exam into JSON objects.
 class ExamSchema(Schema):
     id = fields.Number()
     title = fields.Str()
